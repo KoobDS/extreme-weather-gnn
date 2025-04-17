@@ -38,6 +38,53 @@ CITY_NAMES = [
     "WATERTOWN"
 ]
 
+COLUMN_ORDER = [
+    "NAME",
+    "LATITUDE",
+    "LONGITUDE",
+    "ELEVATION",
+    "ACSH",
+    "AWND",
+    "FMTM",
+    "PGTM",
+    "PRCP",
+    "SNOW",
+    "SNWD",
+    "TAVG",
+    "TMAX",
+    "TMIN",
+    "TSUN",
+    "WDF1",
+    "WDF2",
+    "WDF5",
+    "WDFG",
+    "WESD",
+    "WSF1",
+    "WSF2",
+    "WSF5",
+    "WSFG",
+    "WT01",
+    "WT02",
+    "WT03",
+    "WT04",
+    "WT05",
+    "WT06",
+    "WT07",
+    "WT08",
+    "WT09",
+    "WT10",
+    "WT11",
+    "WT13",
+    "WT14",
+    "WT15",
+    "WT16",
+    "WT17",
+    "WT18",
+    "WT19",
+    "WT21",
+    "WT22"
+]
+
 DATE_RANGE = pd.date_range(start="1995-01-01", end="2025-01-01", freq='D')
 
 DROP_COLUMNS = [
@@ -53,6 +100,49 @@ DROP_COLUMNS = [
     "WV03",         # Thunder in the vicinity
     "WV18",         # Snow or ice crystals in the vicinity
     "WV20"          # Rain or snow shower in the vicinity
+]
+
+NUMERICAL_COLUMNS = [
+    "ACSH",
+    "AWND",
+    "FMTM",
+    "PGTM",
+    "PRCP",
+    "SNOW",
+    "SNWD",
+    "TAVG",
+    "TMAX",
+    "TMIN",
+    "TSUN",
+    "WDF1",
+    "WDF2",
+    "WDF5",
+    "WDFG",
+    "WESD",
+    "WSF1",
+    "WSF2",
+    "WSF5",
+    "WSFG",
+    "WT01",
+    "WT02",
+    "WT03",
+    "WT04",
+    "WT05",
+    "WT06",
+    "WT07",
+    "WT08",
+    "WT09",
+    "WT10",
+    "WT11",
+    "WT13",
+    "WT14",
+    "WT15",
+    "WT16",
+    "WT17",
+    "WT18",
+    "WT19",
+    "WT21",
+    "WT22"
 ]
 
 WEATHER_TYPES = [

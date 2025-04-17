@@ -37,6 +37,15 @@ def process_data(name):
         station_data["LONGITUDE"] = station_data["LONGITUDE"].fillna(station_data["LONGITUDE"].mode()[0])
         station_data["ELEVATION"] = station_data["ELEVATION"].fillna(station_data["ELEVATION"].mode()[0])
 
+        # Fill in NaN values for numerical columns with mean
+        for num_col in NUMERICAL_COLUMNS:
+            if num_col not in station_data.columns:
+                station_data[num_col] = np.nan
+            
+            station_data[num_col] = station_data[num_col].fillna(station_data[num_col].mean())
+
+        station_data = station_data[COLUMN_ORDER]
+
         station_data.to_csv(f"data/processed/{station_name}.csv")
 
 

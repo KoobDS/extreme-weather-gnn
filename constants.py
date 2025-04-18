@@ -45,8 +45,6 @@ COLUMN_ORDER = [
     "ELEVATION",
     "ACSH",
     "AWND",
-    "FMTM",
-    "PGTM",
     "PRCP",
     "SNOW",
     "SNWD",
@@ -54,13 +52,9 @@ COLUMN_ORDER = [
     "TMAX",
     "TMIN",
     "TSUN",
-    "WDF1",
-    "WDF2",
     "WDF5",
     "WDFG",
     "WESD",
-    "WSF1",
-    "WSF2",
     "WSF5",
     "WSFG",
     "WT01",
@@ -92,10 +86,16 @@ DROP_COLUMNS = [
     "ACMH",         # Average cloudiness midnight to midnight from manual observations (percent) 
     "DAPR",         # Number of days included in the multiday precipitation total (MDPR) 
     "DASF",         # Number of days included in the multiday snowfall total (MDSF)
+    "FMTM",
     "MDPR",         # Multiday precipitation total (mm or inches as per user preference; use with DAPR and DWPR, if available)
     "MDSF",         # Multiday snowfall total (mm or inches as per user preference)
+    "PGTM",
     "PSUN",         # Daily percent of possible sunshine (percent)
     "TOBS",         # Temperature at the time of observation (Fahrenheit or Celsius as per user preference)
+    "WDF1",
+    "WDF2",
+    "WSF1",
+    "WSF2",
     "WV01",         # Fog, ice fog, or freezing fog (may include heavy fog) in the vicinity
     "WV03",         # Thunder in the vicinity
     "WV18",         # Snow or ice crystals in the vicinity
@@ -105,8 +105,6 @@ DROP_COLUMNS = [
 NUMERICAL_COLUMNS = [
     "ACSH",
     "AWND",
-    "FMTM",
-    "PGTM",
     "PRCP",
     "SNOW",
     "SNWD",
@@ -114,13 +112,9 @@ NUMERICAL_COLUMNS = [
     "TMAX",
     "TMIN",
     "TSUN",
-    "WDF1",
-    "WDF2",
     "WDF5",
     "WDFG",
     "WESD",
-    "WSF1",
-    "WSF2",
     "WSF5",
     "WSFG",
     "WT01",

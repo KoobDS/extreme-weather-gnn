@@ -4,6 +4,15 @@ import pandas as pd
 from constants import *
 
 
+def label_data(row):
+    if row["PRCP"] > 50:
+        return "Flood"
+    elif row["WT07"] > 0:
+        return "Fire"
+    else:
+        return "None"
+
+
 def process_data(name):
     df = pd.read_csv(f"data/raw/{name}.csv")
     
@@ -43,8 +52,21 @@ def process_data(name):
                 station_data[num_col] = np.nan
             
             station_data[num_col] = station_data[num_col].fillna(station_data[num_col].mean())
+        
+        # Fill in NaN values for categorical columns with 0
+        for cat_col in CATEGORICAL_COLUMNS:
+            if cat_col not in station_data.columns:
+                station_data[cat_col] = np.nan
+            
+            station_data[cat_col] = station_data[cat_col].fillna(0)
+        
+        station_data = station_data[SPATIOTEMPORAL_COLUMNS + NUMERICAL_COLUMNS + CATEGORICAL_COLUMNS]
+        
+        # Use data to determine weather event label
+        station_data["EVENT"] = station_data.apply(label_data, axis=1)
 
-        station_data = station_data[COLUMN_ORDER]
+        # Once the label has been determined, get rid of categorical columns
+        station_data = station_data.drop(columns=CATEGORICAL_COLUMNS)
 
         station_data.to_csv(f"data/processed/{station_name}.csv")
 

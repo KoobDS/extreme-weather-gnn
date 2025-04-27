@@ -1,0 +1,50 @@
+# ---------------- Data ----------------
+csv_path: data/weekly_dataset.csv          # engineered weekly file
+processed_dir: data/processed_graphs_v2       # PyG cache folder
+k_neighbors: 8                             # spatial k‑NN
+edge_weight: inverse_distance
+
+# --------------- Features --------------
+input_features: [
+  ACSH, AWND, SNWD, TAVG, TSUN, WDF5, WDFG,
+  PRCP, SNOW, TMAX, TMIN,
+  EXT_ACSH_CLOUDY, EXT_ACSH_CLEAR, EXT_TSUN_DARK, EXT_TSUN_BRIGHT,
+  EXT_TMAX_HOT, EXT_TMAX_COLD, EXT_TMIN_TROP, EXT_TMIN_FROST,
+  EXT_PRCP_P95, EXT_SNOW_P95, EXT_SNWD_P90, EXT_AWND_P95,
+  # EXT_PRCP_20MM, EXT_SNOW_10CM, EXT_AWND_GALE,
+  EXT_TMAX_GT35, EXT_TMIN_LT0, EXT_WSFG_DAMG,
+  SNWD_P90_LAG1, TMAX_ABOVE0, TMAX_HOT_T, TMIN_FROST_TPLUS1
+]
+
+# -------------- Targets ---------------
+target_labels: [
+  COMPOUND_HEAT_DRY_next,
+  COMPOUND_HEAT_WIND_next,
+  COMPOUND_HOT_CLEAR_SKY_next,
+  COMPOUND_STORM_RAIN_WIND_next,
+  COMPOUND_BLIZZARD_next,
+  COMPOUND_RAIN_ON_SNOW_next,
+  COMPOUND_THAW_FREEZE_next,
+  COMPOUND_BACK2BACK_RAIN_next
+]
+
+# --------------- Model ----------------
+hidden_dim: 96
+num_layers: 2
+dropout: 0.05
+
+# ------------- Training ---------------
+batch_size: 128  # A100
+lr: 0.001
+lr_scheduler: cosine_warm_restart
+scheduler_t0: 50         # warm-restart every 50 epochs
+eta_min: 1e-5            # final LR on each cosine cycle
+weight_decay: 1e-4
+num_epochs: 500          # hard ceiling; early-stop will kick in
+patience: 80             # epochs of no improvement before stop
+min_delta: 1e-4          # improvement threshold
+device: cuda
+seed: 1
+
+# -------------- Logging ---------------
+output_dir: outputs/logsn

@@ -6,7 +6,7 @@ OUT_PATH = "data/weekly_dataset1.csv"
 BAD_STATIONS = ["AUBURN", "ESCANABA"]
 BASELINE_YEARS = (1995, 2014)
 
-# Adjusted thresholds (optional tweak)
+# Adjusted thresholds
 P_HIGH, P_LOW  = 0.90, 0.10  # relaxed to 90%/10% for better frequency
 
 # Updated Definitions

@@ -1,4 +1,4 @@
-# ClimateChangeCausalInferenceDL
+# Causal Climate GCN
 
 Using Causal Inference Deep Learning for Climate Change
 

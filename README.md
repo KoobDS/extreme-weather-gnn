@@ -1,7 +1,4 @@
-# Causal Climate GCN
+# ClimateChangeCausalInferenceDL
 
-Using Causal Inference Deep Learning for Climate Change
+Using  Deep Learning for Compound Severe Weather Prediction
 
-## Setup
-
-Run `source setup.sh` in the command line

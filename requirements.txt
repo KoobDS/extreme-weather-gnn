@@ -1,6 +1,14 @@
+# Core numerical & data wrangling
 numpy==2.2.4
 pandas==2.2.3
-python-dateutil==2.9.0.post0
-pytz==2025.2
-six==1.17.0
-tzdata==2025.2
+
+# Deep‑learning stack
+torch==2.3.0          # CUDA 12.1 wheels available from PyPI
+torch-geometric==2.5.0
+
+# ML utilities
+scikit-learn==1.5.0
+pyyaml==6.0.1
+
+# Optional logging / tracking
+wandb>=0.17.0

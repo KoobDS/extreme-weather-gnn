@@ -22,15 +22,17 @@ Full methodology & figures are in **[`DL_Final_Project_Report.pdf`](./DL_Final_P
 
 ## Repo structure
 
-- data/ # raw station data (processed sets too large for GitHub, though replicable by running below)
-- training_results/ # Results of model training
-- causal_results/ # Results of causal analysis
-- visualization/ # PCA plots, compound event relationship plots
-- Processing.ipynb # Replicates training data from station data
-- train.py # GraphSAGE training loop
-- metrics.py # Produces metrics (AUROC)
-- requirements.txt # For replication
-- DL_Final_Project_Report.pdf # Full written report
+| Path | Description |
+|------|-------------|
+| `data/` | Raw station CSVs (processed tensors reproducible locally) |
+| `training_results/` | Saved checkpoints, logs, and metrics |
+| `causal_results/` | Outputs from DoWhy causal analysis |
+| `visualization/` | PCA plots and compound‑event visualizations |
+| `Processing.ipynb` | Generates training tensors from raw data |
+| `train.py` | GraphSAGE training loop (YAML‑configurable) |
+| `metrics.py` | AUROC / BCE / confusion‑matrix utilities |
+| `requirements.txt` | Package versions for replication |
+| `DL_Final_Project_Report.pdf` | Complete written report |
 
 This study's graph's map is shown below: **[`Great Lakes Graph`](./Graph.png)**
 

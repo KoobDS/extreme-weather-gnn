@@ -53,5 +53,3 @@ Contributions
 
 This README highlights my work; the full report credits all co‑authors.
 
-::contentReference[oaicite:0]{index=0}
-

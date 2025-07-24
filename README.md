@@ -1,6 +1,5 @@
 # Extreme‑Weather‑GNN
-Compound extreme‑weather forecasting with Graph Convolutional Networks and causal analysis  
-*(Great‑Lakes region, weekly lead time)*  
+Compound extreme‑weather forecasting with Graph Convolutional Networks and causal analysis *(Great‑Lakes region, weekly lead time)*  
 
 ## Headline
 A 2‑layer GraphSAGE model predicts eight compound climate hazards (heat–drought, rain‑on‑snow, etc.).  
@@ -30,11 +29,10 @@ Full methodology & figures are in **[`DL_Final_Project_Report.pdf`](./DL_Final_P
 - Processing.ipynb # Replicates training data from station data
 - train.py # GraphSAGE training loop
 - metrics.py # Produces metrics (AUROC)
+- requirements.txt # For replication
+- DL_Final_Project_Report.pdf # Full written report
 
-DL_Final_Project_Report.pdf # Full written report
-requirements.txt # For replication
-
-This study's graph's map is shown below: **[`Graph`](./Graph.png)**
+This study's graph's map is shown below: **[`Great Lakes Graph`](./Graph.png)**
 
 ## Quick start
 ```bash
@@ -46,10 +44,7 @@ python train.py      # reproduces best checkpoint
 ```
 
 Contributions
-
-    Benjamin Koob: Data processing (station merge, PCA), graph construction, all training scripts, model training, mapping, and primary prediction analysis.
-
-    Team colleagues (see commit history): Assisted with raw‑data collection and preprocessing, experimental design, and causal‑inference.
-
+- Benjamin Koob: Data processing (station merge, PCA), graph construction, all training scripts, model training, mapping, and primary prediction analysis.
+- Teammates (see commit history): Assisted with raw‑data collection and preprocessing, experimental design, and causal‑inference.
 This README highlights my work; the full report credits all co‑authors.
 

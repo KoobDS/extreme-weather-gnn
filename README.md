@@ -43,7 +43,7 @@ pip install -r requirements.txt
 python train.py      # reproduces best checkpoint
 ```
 
-Contributions
+### Contributions
 - Benjamin Koob: Data processing (station merge, PCA), graph construction, all training scripts, model training, mapping, and primary prediction analysis.
 - Teammates (see commit history): Assisted with raw‑data collection and preprocessing, experimental design, and causal‑inference.
 This README highlights my work; the full report credits all co‑authors.

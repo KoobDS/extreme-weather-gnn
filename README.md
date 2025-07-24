@@ -23,12 +23,14 @@ Full methodology & figures are in **[`DL_Final_Project_Report.pdf`](./DL_Final_P
 
 ## Repo structure
 
-data/ # raw station data (processed sets too large for GitHub, though replicable by running below)
-Processing.ipynb # Replicates training data from station data
-train.py # GraphSAGE training loop
-metrics.py # Produces metrics (AUROC)
-causal_results/ # Results of causal analysis
-visualization/ # PCA plots, compound event relationship plots
+- data/ # raw station data (processed sets too large for GitHub, though replicable by running below)
+- training_results/ # Results of model training
+- causal_results/ # Results of causal analysis
+- visualization/ # PCA plots, compound event relationship plots
+- Processing.ipynb # Replicates training data from station data
+- train.py # GraphSAGE training loop
+- metrics.py # Produces metrics (AUROC)
+
 DL_Final_Project_Report.pdf # Full written report
 requirements.txt # For replication
 
@@ -45,9 +47,9 @@ python train.py      # reproduces best checkpoint
 
 Contributions
 
-    Benjamin Koob: data preprocessing (station merge, PCA), graph construction, all training scripts, model training, mapping, and primary prediction analysis.
+    Benjamin Koob: Data processing (station merge, PCA), graph construction, all training scripts, model training, mapping, and primary prediction analysis.
 
-    Team colleagues (see commit history): assisted with raw‑data collection and preprocessing, experimental design, and causal‑inference.
+    Team colleagues (see commit history): Assisted with raw‑data collection and preprocessing, experimental design, and causal‑inference.
 
 This README highlights my work; the full report credits all co‑authors.
 

@@ -9,7 +9,7 @@ from sklearn.neighbors import BallTree
 from sklearn.exceptions import UndefinedMetricWarning
 from torch_geometric.data import Data, InMemoryDataset
 from torch_geometric.loader import DataLoader
-from torch_geometric.nn import SAGEConv          # ← back to SAGEConv
+from torch_geometric.nn import SAGEConv          # <- back to SAGEConv
 
 warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
 
@@ -34,7 +34,7 @@ def haversine_km(lat1, lon1, lat2, lon2):
     return 2*R*np.arcsin(np.sqrt(a))
 
 def build_knn(lat, lon, k:int):
-    """Return (edge_index, edge_weight_inv_dist) – weight is optional."""
+    """Return (edge_index, edge_weight_inv_dist) - weight is optional."""
     tree = BallTree(np.radians(np.c_[lat, lon]), metric="haversine")
     _, idx = tree.query(np.radians(np.c_[lat, lon]), k=k+1)
     src = np.repeat(np.arange(len(lat)), k); dst = idx[:,1:].reshape(-1)
@@ -83,7 +83,7 @@ class WeeklyDataset(InMemoryDataset):
             mask_tr = torch.tensor([s in train_st for s in st.STATION], dtype=torch.bool)
 
             graphs.append(Data(
-                x=x, y=y, edge_index=ei,          # ← pass only edge_index
+                x=x, y=y, edge_index=ei,          # <- pass only edge_index
                 train_mask=mask_tr, val_mask=~mask_tr))
 
         Path(self.cfg["processed_dir"]).mkdir(parents=True, exist_ok=True)
@@ -103,7 +103,7 @@ class NodeSAGE(nn.Module):
     def forward(self, d: Data):
         x = d.x
         for c in self.convs:
-            x = F.relu(c(x, d.edge_index))        # ← **no edge_weight / edge_attr**
+            x = F.relu(c(x, d.edge_index))        # <- **no edge_weight / edge_attr**
             if self.drop: x = F.dropout(x, self.drop, self.training)
         return self.cls(x)
 

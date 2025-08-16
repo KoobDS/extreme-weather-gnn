@@ -42,7 +42,7 @@ git clone https://github.com/KoobDS/extreme-weather-gnn.git
 cd extreme-weather-gnn
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-python train.py --config configs/default.yaml # reproduces best checkpoint
+python train.py --config default.yaml # reproduces best checkpoint
 ```
 
 ### Contributions

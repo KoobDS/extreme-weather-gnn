@@ -1,5 +1,5 @@
 # Extreme‑Weather‑GNN
-Compound extreme‑weather forecasting with Graph Convolutional Networks and causal analysis *(Great‑Lakes region, weekly lead time)*  
+Compound extreme‑weather forecasting with Graph Neural Networks and causal analysis *(Great‑Lakes region, weekly lead time)*  
 
 ## Headline
 A 2‑layer GraphSAGE model predicts eight compound climate hazards (heat–drought, rain‑on‑snow, etc.).  
@@ -42,7 +42,7 @@ git clone https://github.com/KoobDS/extreme-weather-gnn.git
 cd extreme-weather-gnn
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-python train.py      # reproduces best checkpoint
+python train.py --config configs/default.yaml # reproduces best checkpoint
 ```
 
 ### Contributions

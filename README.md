@@ -18,7 +18,7 @@ Full methodology & figures are in **[`DL_Final_Project_Report.pdf`](./DL_Final_P
 - Python 3.10
 - PyTorch 2.3 · Torch‑Geometric 2.5
 - NumPy 2.2 · pandas 2.2 · scikit‑learn 1.5
-- YAML‑driven config (PyYAML 6)
+- YAML‑driven config (`default.yaml`) 
 
 ## Repo structure
 
